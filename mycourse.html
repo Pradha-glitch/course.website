@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Courses - SkillSphere</title>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  background-color: #111;
+}
+.hero-header {
+  text-align: center;
+  padding: 80px 20px 40px;
+  background: rgba(0, 0, 0, 0.6);
+  position: relative;
+  z-index: 2;
+}
+.course-section {
+  background: url('https://images.unsplash.com/photo-1551434678-e076c223a692') no-repeat center center/cover;
+  padding: 60px 20px;
+  position: relative;
+}
+
+.courses-overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 40px 20px;
+  border-radius: 12px;
+  max-width: 1200px;
+  margin: auto;
+}
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+.course-card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  transition: transform 0.3s ease;
+}
+.course-card:hover {
+  transform: translateY(-5px);
+}
+.course-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.course-card h3 {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+}
+.course-card p {
+  font-size: 0.95em;
+  color: #ccc;
+  margin-bottom: 12px;
+}
+.course-card .btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+.course-card .btn:hover {
+  background-color: #2e7d32;
+}
+footer {
+  background-color: #000;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+  </style>
+</head>
+<body>
+  <header class="hero-header">
+    <h1>My Enrolled Courses</h1>
+    <p>Continue your learning journey right here</p>
+  </header>
+
+  <main class="course-section">
+    <div class="courses-overlay">
+      <div class="courses-grid">
+        <div class="course-card">
+          <img src="https://img-c.udemycdn.com/course/240x135/625204_436a_3.jpg" alt="Web Dev">
+          <h3>Web Developer Bootcamp</h3>
+          <p>Progress: 45% completed</p>
+          <a href="https://www.udemy.com/course/the-web-developer-bootcamp/" target="_blank" class="btn">Resume Course</a>
+        </div>
+
+        <div class="course-card">
+          <img src="https://img-c.udemycdn.com/course/240x135/567828_67d0.jpg" alt="Python">
+          <h3>Python for Everybody</h3>
+          <p>Progress: 80% completed</p>
+          <a href="https://www.coursera.org/specializations/python" target="_blank" class="btn">Resume Course</a>
+        </div>
+
+        <div class="course-card">
+          <img src="https://img-c.udemycdn.com/course/240x135/950390_270f_3.jpg" alt="ML">
+          <h3>Machine Learning (Stanford)</h3>
+          <p>Progress: 60% completed</p>
+          <a href="https://www.coursera.org/learn/machine-learning" target="_blank" class="btn">Resume Course</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SkillSphere</p>
+  </footer>
+</body>
+</html>

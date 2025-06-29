@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - SkillSphere</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+    }
+
+    .contact {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      overflow: hidden;
+      background: url('https://t4.ftcdn.net/jpg/04/45/70/71/360_F_445707107_elptpcI7pUDPa9kMdnX9e3506QdHfo7r.jpg') no-repeat center center;
+      background-size: cover;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.75);
+      z-index: 1;
+    }
+
+    .contact-content {
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 600px;
+      height: auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      animation: fadeInUp 1s ease-out forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .contact-content h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: whitesmoke;
+    }
+
+    .contact-content p {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      color: white;
+      text-align: left;
+    }
+
+    .contact-form label {
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background-color: #2b2b2b;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: 2px solid #4caf50;
+    }
+
+    .contact-form button {
+      background-color: #4caf50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #2e7d32;
+    }
+
+    footer {
+      background-color: #000;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    @media (max-width: 600px) {
+      .contact-content {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="contact">
+    <div class="overlay"></div>
+
+    <div class="contact-content">
+      <h1>Contact SkillSphere</h1>
+      <p>We’d love to hear from you. Send your message below.</p>
+
+      <form class="contact-form">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SkillSphere. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("✅ Thank you for contacting SkillSphere!");
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>

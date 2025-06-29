@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Browse Courses - SkillSphere</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+    }
+
+    .hero-header {
+      text-align: center;
+      padding: 80px 20px 40px;
+      background-color: rgba(0, 0, 0, 0.6);
+      position: relative;
+      z-index: 2;
+    }
+
+    .course-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .courses-overlay {
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 1300px;
+      margin: auto;
+      z-index: 1;
+      position: relative;
+    }
+
+    .category-section {
+      margin-bottom: 60px;
+    }
+
+    .category-section h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #4caf50;
+      padding-bottom: 8px;
+    }
+
+    .category-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .browse-card {
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      padding: 15px;
+      width: 280px;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .browse-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .browse-card img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .browse-card h4 {
+      font-size: 1.1em;
+      margin-bottom: 6px;
+    }
+
+    .browse-card p {
+      font-size: 0.9em;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .browse-card a {
+      background-color: #4caf50;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .browse-card a:hover {
+      background-color: #388e3c;
+    }
+
+    footer {
+      background-color: #000;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero-header">
+    <h1>Browse Courses by Category</h1>
+    <p>Choose from 30+ top-rated courses</p>
+  </header>
+
+  <main class="course-section">
+    <video autoplay muted loop class="bg-video">
+      <source src="https://cdn.coverr.co/videos/coverr-typing-on-laptop-1524/1080p.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="courses-overlay">
+      <div class="category-section">
+      <h2>Web Development</h2>
+      <div class="category-row">
+        <div class="browse-card">
+          <img src="./web development.jpg">
+          <h4>Web Dev Bootcamp</h4>
+          <p>HTML, CSS, JS</p>
+          <a href="https://www.udemy.com/course/the-web-developer-bootcamp/" target="_blank">View</a>
+        </div>
+        <div class="browse-card">
+          <img src="./React_js.jpg">
+          <h4>Modern React</h4>
+          <p>React, Redux</p>
+          <a href="https://www.udemy.com/course/react-the-complete-guide-incl-redux/" target="_blank">View</a>
+        </div>
+        <div class="browse-card">
+          <img src="./advanced js.jpg">
+          <h4>Advanced JS</h4>
+          <p>ES6, Async, DOM</p>
+          <a href="https://www.udemy.com/course/advanced-javascript-concepts/" target="_blank">View</a>
+        </div>
+        <div class="browse-card">
+          <img src="./Mern Stack.jpg">
+          <h4>Fullstack MERN</h4>
+          <p>Mongo, Express</p>
+          <a href="https://www.udemy.com/course/mern-stack-front-to-back/" target="_blank">View</a>
+        </div>
+        <div class="browse-card">
+          <img src="./vue+firebase.jpg">
+          <h4>Vue & Firebase</h4>
+          <p>Real-time apps</p>
+          <a href="https://www.udemy.com/course/vue-js-firebase/" target="_blank">View</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="category-section">
+      <h2>Data Science</h2>
+      <div class="category-row">
+        <div class="browse-card">
+          <img src="./python for ds.jpg">
+          <h4>Python for DS</h4>
+          <p>Pandas, NumPy</p>
+          <a href="https://www.udemy.com/course/python-for-data-science-and-machine-learning-bootcamp/"
+            target="_blank">View</a>
+        </div>
+        <div class="browse-card">
+          <img src="./machine learning.jpg">
+          <h4>ML A-Z</h4>
+          <p>Sklearn, XGBoost</p>
+          <a href="https://www.udemy.com/course/machinelearning/" target="_blank">View</a>
+        </div>
+        <div class="browse-card">
+          <img src="https://img-c.udemycdn.com/course/240x135/2148746_6563.jpg">
+          <h4>Data Analysis</h4>
+          <p>Real-world Projects</p>
+          <a href="https://www.udemy.com/course/data-analysis-with-pandas/" target="_blank">View</a>
+        </div>
+        <div class="browse-card">
+          <img src="https://img-c.udemycdn.com/course/240x135/2036076_0f09.jpg">
+          <h4>Deep Learning</h4>
+          <p>TensorFlow & Keras</p>
+          <a href="https://www.udemy.com/course/deeplearning/" target="_blank">View</a>
+        </div>
+        <div class="browse-card">
+          <img src="https://img-c.udemycdn.com/course/240x135/3037002_8b7c_2.jpg">
+          <h4>Statistics for DS</h4>
+          <p>Probability & Inference</p>
+          <a href="https://www.udemy.com/course/statistics-for-data-science-and-business-analysis/" target="_blank">View</a>
+        </div>
+      </div>
+    </div>
+    <div class="category-section">
+      <h2>Mobile App Development</h2>
+      <div class="category-row">
+        <div class="browse-card">
+          <img src="https://img-c.udemycdn.com/course/240x135/1708340_7108_3.jpg">
+          <h4>Flutter & Dart</h4>
+          <p>iOS & Android</p>
+          <a href="https://www.udemy.com/course/flutter-dart-the-complete-guide/" target="_blank">View</a>
+        </div>
+        <div class="browse-card">
+          <img src="https://img-c.udemycdn.com/course/240x135/1646980_23f7_5.jpg">
+          <h4>React Native</h4>
+          <p>Cross-platform</p>
+          <a href="https://www.udemy.com/course/react-native-the-practical-guide/" target="_blank">View</a>
+        </div>
+        <div class="browse-card">
+          <img src="https://img-c.udemycdn.com/course/240x135/1264094_4c2b_3.jpg">
+          <h4>Android Java</h4>
+          <p>Java, SQLite</p>
+          <a href="https://www.udemy.com/course/master-android-app-development-with-java/" target="_blank">View</a>
+        </div>
+        <div class="browse-card">
+          <img src="https://img-c.udemycdn.com/course/240x135/1344968_4e1f_5.jpg">
+          <h4>Kotlin Android</h4>
+          <p>Modern Android Dev</p>
+          <a href="https://www.udemy.com/course/kotlin-android-developer-masterclass/" target="_blank">View</a>
+        </div>
+        <div class="browse-card">
+          <img src="https://img-c.udemycdn.com/course/240x135/3231922_4d0f.jpg">
+          <h4>iOS Swift</h4>
+          <p>iOS 13+, Xcode</p>
+          <a href="https://www.udemy.com/course/ios13-app-development-bootcamp/" target="_blank">View</a>
+        </div>
+      </div>
+    </div>
+    <div class="category-section">
+      <h2>Business & Finance</h2>
+      <div class="category-row">
+        <div class="browse-card">
+          <img src="https://img-c.udemycdn.com/course/240x135/757244_c1aa_2.jpg">
+          <h4>MBA in 1 Course</h4>
+          <p>Business Skills</p>
+          <a href="https://www.udemy.com/course/an-entire-mba-in-1-courseaward-winning-business-school-prof/"
+            target="_blank">View</a>
+        </div>
+        <div class="browse-card">
+          <img src="https://img-c.udemycdn.com/course/240x135/1316344_b8a0_4.jpg">
+          <h4>Excel for Business</h4>
+          <p>Formulas, Charts</p>
+          <a href="https://www.udemy.com/course/excel-for-business-essentials/" target="_blank">View</a>
+        </div>
+        <div class="browse-card">
+          <img src="https://img-c.udemycdn.com/course/240x135/2329064_4fa7.jpg">
+          <h4>Accounting 101</h4>
+          <p>Balance Sheets</p>
+          <a href="https://www.udemy.com/course/accounting-basics/" target="_blank">View</a>
+        </div>
+        <div class="browse-card">
+          <img src="https://img-c.udemycdn.com/course/240x135/3219180_2a89.jpg">
+          <h4>Stock Market</h4>
+          <p>Investing Basics</p>
+          <a href="https://www.udemy.com/course/the-complete-foundation-stock-trading-course/" target="_blank">View</a>
+        </div>
+        <div class="browse-card">
+          <img src="https://img-c.udemycdn.com/course/240x135/2354736_e5a7.jpg">
+          <h4>Crypto & Blockchain</h4>
+          <p>Bitcoin & More</p>
+          <a href="https://www.udemy.com/course/cryptocurrency-investment-course-2018/" target="_blank">View</a>
+        </div>
+      </div>
+    </div>
+    <div class="category-section">
+      <h2>Design & Creativity</h2>
+      <div class="category-row">
+        <div class="browse-card">
+          <img src="https://img-c.udemycdn.com/course/240x135/1026604_790b_2.jpg">
+          <h4>Photoshop Mastery</h4>
+          <p>Edit Like a Pro</p>
+          <a href="https://www.udemy.com/course/photoshop-cc-for-beginners/" target="_blank">View</a>
+        </div>
+        <div class="browse-card">
+          <img src="https://img-c.udemycdn.com/course/240x135/1452908_8741_3.jpg">
+          <h4>Canva Design</h4>
+          <p>Simple Graphic Design</p>
+          <a href="https://www.udemy.com/course/canva-masterclass/" target="_blank">View</a>
+        </div>
+        <div class="browse-card">
+          <img src="https://img-c.udemycdn.com/course/240x135/768848_798c_2.jpg">
+          <h4>UI/UX Design</h4>
+          <p>Figma, XD, Sketch</p>
+          <a href="https://www.udemy.com/course/ui-ux-web-design-using-adobe-xd/" target="_blank">View</a>
+        </div>
+        <div class="browse-card">
+          <img src="https://img-c.udemycdn.com/course/240x135/1026604_790b_2.jpg">
+          <h4>Illustrator Basics</h4>
+          <p>Logo & Icons</p>
+          <a href="https://www.udemy.com/course/adobe-illustrator-cc-essentials-training/" target="_blank">View</a>
+        </div>
+        <div class="browse-card">
+          <img src="https://img-c.udemycdn.com/course/240x135/1289478_5831_4.jpg">
+          <h4>Animation Design</h4>
+          <p>2D/3D Motion</p>
+          <a href="https://www.udemy.com/course/2d-animation-for-beginners/" target="_blank">View</a>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+    </main>
+    
+    <footer>
+      <p>&copy; 2025 SkillSphere</p>
+    </footer>
+    
+    </body>
+    
+    </html>
+    </main>
+    
+    <footer>
+      <p>&copy; 2025 SkillSphere</p>
+    </footer>
+    
+    </body>
+    
+    </html>
+

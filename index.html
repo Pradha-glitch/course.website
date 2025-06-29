@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SkillSphere - Learn Online</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-image: url('./ai background.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    header {
+      background: rgb(20, 23, 23);
+      color: whitesmoke;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: whitesmoke;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .search-box {
+      display: flex;
+      gap: 10px;
+    }
+
+    .search-box input {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .search-box button {
+      background:orange;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: url('assets/hero-bg.jpg') no-repeat center center / cover;
+      color:whitesmoke;
+      transition: all 0.3s ease;
+      outline: none;
+      font-weight: bold;
+      font-size: 30px;
+      top: 10px;
+    }
+
+    .hero:focus {
+      outline: 5px solid black;
+      box-shadow: 0 0 15px black;
+      background-blend-mode: multiply;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color:orange;
+      color: white;
+      text-decoration: none;
+      border-radius: 15px;
+      transition: background 0.3s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>SkillSphere</h1>
+    <nav>
+      <a href="./index.html">Home</a>
+      <a href="./course.html">Courses</a>
+      <a href="./mycourse.html">My Courses</a>
+      <a href="./aboutus.html">About</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search skills..." />
+      <button onclick="handleSearch()">Search</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" tabindex="0">
+      <h2>Unlock Your Potential with SkillSphere</h2>
+      <p>Learn from the best instructors. Anytime. Anywhere.</p>
+      <a href="./professional.html" class="btn">Earn professional certificte</a>
+    </section>
+  </main>
+
+  <script>
+    function handleSearch() {
+      const input = document.getElementById("searchInput").value.trim();
+      if (input) {
+        const query = encodeURIComponent(input);
+        const url = "https://www.google.com/search?q=" + query;
+        window.open(url, "_blank");
+      } else {
+        alert("Please enter a search term.");
+      }
+    }
+    document.getElementById("searchInput").addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        handleSearch();
+      }
+    });
+  </script>
+</body>
+</html>

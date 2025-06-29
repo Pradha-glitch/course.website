@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#121212" />
+  <title>Courses - SkillSphere</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body,
+    html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      background-color: #121212;
+    }
+
+    .header {
+      text-align: center;
+      padding: 80px 20px 40px;
+      background: rgba(0, 0, 0, 0.7);
+      position: relative;
+      z-index: 2;
+    }
+
+    .course-section {
+      background: url('https://images.unsplash.com/photo-1551434678-e076c223a692') no-repeat center center/cover;
+      padding: 60px 20px;
+      position: relative;
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 40px;
+    }
+
+    .course-card,
+    .browse-card {
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .course-card:hover,
+    .browse-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .course-card img,
+    .browse-card img {
+      width: 100%;
+      border-radius: 6px;
+      height: 140px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .course-card h3,
+    .browse-card h4 {
+      font-size: 1.1em;
+      margin-bottom: 6px;
+    }
+
+    .course-card p,
+    .browse-card p {
+      font-size: 0.9em;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .btn,
+    .browse-card a {
+      background-color: #4caf50;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      transition: background-color 0.3s;
+      text-align: center;
+    }
+
+    .btn:hover,
+    .browse-card a:hover {
+      background-color: #388e3c;
+    }
+
+    .category-section {
+      padding: 40px;
+      background-color: #1e1e1e;
+      margin-top: 40px;
+      border-radius: 10px;
+    }
+
+    .category-section h2 {
+      margin-bottom: 20px;
+      color: #4caf50;
+      text-align: center;
+    }
+
+    .category-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    footer {
+      background-color: #000;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <h1>Explore Our Top Courses</h1>
+    <p>Boost your skills with high-quality content from trusted platforms</p>
+  </header>
+
+  <main class="course-section">
+    <div class="courses-grid" id="courseContainer"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SkillSphere</p>
+  </footer>
+
+  <script>
+    const courses = [
+      { title: 'Web Developer Bootcamp', desc: 'HTML, CSS, JS, React, Node.js', img: 'https://img-c.udemycdn.com/course/240x135/625204_436a_3.jpg', url: 'https://www.udemy.com/course/the-web-developer-bootcamp/' },
+      { title: 'Python for Everybody', desc: 'Learn Python from scratch', img: 'https://img-c.udemycdn.com/course/240x135/567828_67d0.jpg', url: 'https://www.coursera.org/specializations/python' },
+      { title: 'Machine Learning', desc: 'ML by Stanford – Andrew Ng', img: 'https://img-c.udemycdn.com/course/240x135/950390_270f_3.jpg', url: 'https://www.coursera.org/learn/machine-learning' },
+      { title: 'Data Structures in Java', desc: 'Master core DSA concepts', img: 'https://img-c.udemycdn.com/course/240x135/1565838_e54e_16.jpg', url: 'https://www.udemy.com/course/data-structures-and-algorithms-deep-dive-using-java/' },
+      { title: 'UI/UX Design Essentials', desc: 'Learn modern design tools', img: 'https://img-c.udemycdn.com/course/240x135/246154_d8b0_3.jpg', url: 'https://www.udemy.com/course/ui-ux-web-design-using-adobe-xd/' },
+      { title: 'DSA Masterclass in C++', desc: 'Best for coding interviews', img: 'https://img-c.udemycdn.com/course/240x135/1565838_e54e_17.jpg', url: 'https://www.udemy.com/course/dsa-bootcamp/' },
+      { title: 'Excel for Business', desc: 'Formulas, charts, dashboards', img: './excel.jpg', url: 'https://www.coursera.org/learn/excel-essentials' },
+      { title: 'React – The Complete Guide', desc: 'Hooks, Redux, APIs & more', img: 'https://img-c.udemycdn.com/course/240x135/2196488_8fc7.jpg', url: 'https://www.udemy.com/course/react-the-complete-guide-incl-redux/' },
+      { title: 'Cybersecurity for Beginners', desc: 'Learn hacking & security', img: 'https://img-c.udemycdn.com/course/240x135/951618_0839_2.jpg', url: 'https://www.udemy.com/course/cyber-security-course/' },
+      { title: 'Android App Development', desc: 'Kotlin, UI, database', img: './Custom Android.jpg', url: 'https://www.udemy.com/course/the-complete-android-app-developer-bootcamp/' },
+      { title: 'iOS & Swift – Complete Guide', desc: 'Build iOS apps with Swift', img: 'https://img-c.udemycdn.com/course/240x135/857010_8239.jpg', url: 'https://www.udemy.com/course/ios-13-app-development-bootcamp/' },
+      { title: 'Ethical Hacking Course', desc: 'Learn penetration testing', img: 'https://img-c.udemycdn.com/course/240x135/2196488_8fc7.jpg', url: 'https://www.udemy.com/course/learn-ethical-hacking-from-scratch/' },
+      { title: 'Artificial Intelligence A-Z', desc: 'Build AI with Python', img: 'https://img-c.udemycdn.com/course/240x135/2196488_8fc7.jpg', url: 'https://www.udemy.com/course/artificial-intelligence-az/' },
+      { title: 'Blockchain for Beginners', desc: 'Bitcoin, Ethereum, Web3', img: 'https://img-c.udemycdn.com/course/240x135/2196488_8fc7.jpg', url: 'https://www.udemy.com/course/blockchain-and-cryptocurrency-explained/' }
+    ];
+
+    const container = document.getElementById('courseContainer');
+    courses.forEach(course => {
+      container.innerHTML += `
+        <div class="course-card">
+          <img src="${course.img}" alt="${course.title}">
+          <h3>${course.title}</h3>
+          <p>${course.desc}</p>
+          <a href="${course.url}" class="btn" target="_blank">Go to Course</a>
+        </div>`;
+    });
+  </script>
+</body>
+
+</html>
